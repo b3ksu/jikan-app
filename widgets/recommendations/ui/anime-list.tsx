@@ -1,30 +1,30 @@
-import { getData } from "@/shared/services/get-data";
 import Image from "next/image";
-import { Recommendations } from "../model/types";
+import { useEffect, useState } from "react";
+import { fetchRecommendations } from "../api";
+import { Root } from "../model/types";
 
 export const AnimeList = async () => {
-	const res = await getData<Recommendations>("/recommendations/anime");
+	const data = await fetchRecommendations();
 
 	return (
-		<div className="container">
-			<h1 className="bg-muted">Recommendations</h1>
-
-			<div className="w-screen">
-				{res.data.map((el) => (
-					<div key={el.content}>
-						{el.entry.map((el) => (
-							<div key={el.mal_id}>
-								<div>{el.title}</div>
-								{/* <div>{JSON.stringify(el.images.jpg.image_url)}</div> */}
-								<Image
-									src={el.images.jpg.image_url}
-									alt="sdfsaf"
-									width={200}
-									height={200}
-								/>
-							</div>
-						))}
-					</div>
+		<div>
+			<div className="text-red-400">Anime List</div>
+			<div>
+				{data?.data.map((el) => (
+					<div key={el.mal_id}>{el.title}</div>
+					// <div key={el.content}>
+					// 	{el.entry.map((el) => (
+					// 		<div key={el.mal_id}>
+					// 			<div className="text-blue-600">{el.title}</div>
+					// 			<Image
+					// 				src={el.images.jpg.image_url}
+					// 				alt="sdfsaf"
+					// 				width={200}
+					// 				height={200}
+					// 			/>
+					// 		</div>
+					// 	))}
+					// </div>
 				))}
 			</div>
 		</div>

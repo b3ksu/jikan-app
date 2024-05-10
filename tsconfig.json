@@ -17,10 +17,19 @@
 				"name": "next"
 			}
 		],
+		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./*"]
 		}
 	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+	"include": [
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		".next/types/**/*.ts",
+		"jest.config.ts",
+		"__tests__/app/home.test.tsx",
+		"jest.config.ts"
+	],
 	"exclude": ["node_modules"]
 }

@@ -1,10 +1,10 @@
-import { Theme } from "@radix-ui/themes";
-import "@radix-ui/themes/styles.css";
+import { ThemeProvider } from "@/shared/providers/theme-provider";
+import { Header } from "@/widgets/header";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const nunito = Nunito({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	title: "Jikan",
@@ -17,8 +17,11 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body className={inter.className}>
-				<Theme>{children}</Theme>
+			<body className={`${nunito.className} antialiased`}>
+				<ThemeProvider attribute="class" defaultTheme="dark">
+					<Header />
+					<main className="pt-20">{children}</main>
+				</ThemeProvider>
 			</body>
 		</html>
 	);
