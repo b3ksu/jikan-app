@@ -1,8 +1,8 @@
 "use client";
 
-import { SearchSuggest } from "@/features/search-suggest/ui/ui";
+import { SearchSuggest } from "@/features";
 import { Dialog, DialogContent, DialogTrigger } from "@/shared/ui/dialog";
-import { useOpenSearch } from "../model/useOpenSearch";
+import { useOpenSearch } from "../model/model";
 import { SearchTrigger } from "./search-trigger/search-trigger";
 
 export const Search = () => {

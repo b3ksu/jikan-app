@@ -1,30 +1,28 @@
-export interface Root {
-	pagination: Pagination;
-	data: Daum[];
-	links: Links;
-	meta: Meta;
+export interface SeasonsNow {
+	pagination: SeasonsNowPagination;
+	data: SeasonsNowEntity[];
 }
 
-export interface Pagination {
+export interface SeasonsNowPagination {
 	last_visible_page: number;
 	has_next_page: boolean;
 	current_page: number;
-	items: Items;
+	items: SeasonsNowItems;
 }
 
-export interface Items {
+export interface SeasonsNowItems {
 	count: number;
 	total: number;
 	per_page: number;
 }
 
-export interface Daum {
+export interface SeasonsNowEntity {
 	mal_id: number;
 	url: string;
-	images: Images;
-	trailer: Trailer;
+	images: SeasonsNowImages;
+	trailer: SeasonsNowTrailer;
 	approved: boolean;
-	titles: Title[];
+	titles: SeasonsNowTitle[];
 	title: string;
 	title_english?: string;
 	title_japanese: string;
@@ -34,7 +32,7 @@ export interface Daum {
 	episodes?: number;
 	status: string;
 	airing: boolean;
-	aired: Aired;
+	aired: SeasonsNowAired;
 	duration: string;
 	rating: string;
 	score?: number;
@@ -47,41 +45,41 @@ export interface Daum {
 	background?: string;
 	season?: string;
 	year?: number;
-	broadcast: Broadcast;
-	producers: Producer[];
-	licensors: Licensor[];
-	studios: Studio[];
-	genres: Genre[];
+	broadcast: SeasonsNowBroadcast;
+	producers: SeasonsNowProducer[];
+	licensors: SeasonsNowLicensor[];
+	studios: SeasonsNowStudio[];
+	genres: SeasonsNowGenre[];
 	explicit_genres: any[];
-	themes: Theme[];
-	demographics: Demographic[];
+	themes: SeasonsNowTheme[];
+	demographics: SeasonsNowDemographic[];
 }
 
-export interface Images {
-	jpg: Jpg;
-	webp: Webp;
+export interface SeasonsNowImages {
+	jpg: SeasonsNowJpg;
+	webp: SeasonsNowWebp;
 }
 
-export interface Jpg {
+export interface SeasonsNowJpg {
 	image_url: string;
 	small_image_url: string;
 	large_image_url: string;
 }
 
-export interface Webp {
+export interface SeasonsNowWebp {
 	image_url: string;
 	small_image_url: string;
 	large_image_url: string;
 }
 
-export interface Trailer {
+export interface SeasonsNowTrailer {
 	youtube_id?: string;
 	url?: string;
 	embed_url?: string;
-	images: Images2;
+	images: SeasonsNowImages2;
 }
 
-export interface Images2 {
+export interface SeasonsNowImages2 {
 	image_url?: string;
 	small_image_url?: string;
 	medium_image_url?: string;
@@ -89,104 +87,80 @@ export interface Images2 {
 	maximum_image_url?: string;
 }
 
-export interface Title {
+export interface SeasonsNowTitle {
 	type: string;
 	title: string;
 }
 
-export interface Aired {
+export interface SeasonsNowAired {
 	from: string;
 	to: any;
-	prop: Prop;
+	prop: SeasonsNowProp;
 	string: string;
 }
 
-export interface Prop {
-	from: From;
-	to: To;
+export interface SeasonsNowProp {
+	from: SeasonsNowFrom;
+	to: SeasonsNowTo;
 }
 
-export interface From {
+export interface SeasonsNowFrom {
 	day: number;
 	month: number;
 	year: number;
 }
 
-export interface To {
+export interface SeasonsNowTo {
 	day: any;
 	month: any;
 	year: any;
 }
 
-export interface Broadcast {
+export interface SeasonsNowBroadcast {
 	day?: string;
 	time?: string;
 	timezone?: string;
 	string?: string;
 }
 
-export interface Producer {
+export interface SeasonsNowProducer {
 	mal_id: number;
 	type: string;
 	name: string;
 	url: string;
 }
 
-export interface Licensor {
+export interface SeasonsNowLicensor {
 	mal_id: number;
 	type: string;
 	name: string;
 	url: string;
 }
 
-export interface Studio {
+export interface SeasonsNowStudio {
 	mal_id: number;
 	type: string;
 	name: string;
 	url: string;
 }
 
-export interface Genre {
+export interface SeasonsNowGenre {
 	mal_id: number;
 	type: string;
 	name: string;
 	url: string;
 }
 
-export interface Theme {
+export interface SeasonsNowTheme {
 	mal_id: number;
 	type: string;
 	name: string;
 	url: string;
 }
 
-export interface Demographic {
+export interface SeasonsNowDemographic {
 	mal_id: number;
 	type: string;
 	name: string;
 	url: string;
-}
-
-export interface Links {
-	first: string;
-	last: string;
-	prev: any;
-	next: string;
-}
-
-export interface Meta {
-	current_page: number;
-	from: number;
-	last_page: number;
-	links: Link[];
-	path: string;
-	per_page: number;
-	to: number;
-	total: number;
-}
-
-export interface Link {
-	url?: string;
-	label: string;
-	active: boolean;
 }

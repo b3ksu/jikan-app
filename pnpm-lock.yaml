@@ -17,6 +17,9 @@ importers:
       '@radix-ui/react-slot':
         specifier: ^1.0.2
         version: 1.0.2(@types/react@18.2.70)(react@18.2.0)
+      '@tanstack/react-query':
+        specifier: ^5.35.5
+        version: 5.35.5(react@18.2.0)
       axios:
         specifier: ^1.6.8
         version: 1.6.8
@@ -874,6 +877,14 @@ packages:
 
   '@swc/helpers@0.5.2':
     resolution: {integrity: sha512-E4KcWTpoLHqwPHLxidpOqQbcrZVgi0rsmmZXUle1jXmJfuIf/UWpczUJ7MZZ5tlxytgJXyp0w4PGkkeLiuIdZw==}
+
+  '@tanstack/query-core@5.35.5':
+    resolution: {integrity: sha512-OMWvlEqG01RfGj+XZb/piDzPp0eZkkHWSDHt2LvE/fd1zWburP/xwm0ghk6Iv8cuPlP+ACFkZviKXK0OVt6lhg==}
+
+  '@tanstack/react-query@5.35.5':
+    resolution: {integrity: sha512-sppX7L+PVn5GBV3In6zzj0zcKfnZRKhXbX1MfIfKo1OjIq2GMaopvAFOP0x1bRYTUk2ikrdYcQYOozX7PWkb8A==}
+    peerDependencies:
+      react: ^18.0.0
 
   '@testing-library/dom@10.1.0':
     resolution: {integrity: sha512-wdsYKy5zupPyLCW2Je5DLHSxSfbIp6h80WoHOQc+RPtmPGA52O9x5MJEkv92Sjonpq+poOAtUKhh1kBGAXBrNA==}
@@ -4346,6 +4357,13 @@ snapshots:
   '@swc/helpers@0.5.2':
     dependencies:
       tslib: 2.6.2
+
+  '@tanstack/query-core@5.35.5': {}
+
+  '@tanstack/react-query@5.35.5(react@18.2.0)':
+    dependencies:
+      '@tanstack/query-core': 5.35.5
+      react: 18.2.0
 
   '@testing-library/dom@10.1.0':
     dependencies:

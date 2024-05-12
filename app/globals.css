@@ -75,7 +75,7 @@
 		overscroll-behavior-y: none;
 	}
 	header {
-		@apply bg-gray-800;
+		@apply bg-slate-900;
 	}
 	input {
 		@apply bg-background text-foreground;
