@@ -1,11 +1,11 @@
-import { IconType } from "../lib/types";
+import { IconType } from "../types";
 
 export const PlayIcon = ({ className, size = 50, fill = "#FFF", ...rest }: IconType) => {
 	return (
 		<svg
 			fill={`${fill}`}
-			height={`${size}`}
-			width={`${size}`}
+			height={size}
+			width={size}
 			version="1.1"
 			id="Layer_1"
 			xmlns="http://www.w3.org/2000/svg"
