@@ -11,7 +11,7 @@ export const Logo = () => {
 				height={50}
 				className="rounded-md"
 			/>
-			<p className="text-2xl font-bold">Jikan</p>
+			<p className="text-2xl font-bold text-sky-400">Jikan</p>
 		</Link>
 	);
 };

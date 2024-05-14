@@ -1,2 +1,2 @@
 export { Header } from "./header";
-export { OngoingList } from "./ongoing-list";
+export { CurrentSeasonList } from "./current-season-list";

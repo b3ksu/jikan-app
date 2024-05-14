@@ -1,5 +1,6 @@
 import { QueryProvider } from "@/shared/providers/query-provider";
 import { ThemeProvider } from "@/shared/providers/theme-provider";
+import { Toaster } from "@/shared/ui/sonner";
 import { Header } from "@/widgets";
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
@@ -23,6 +24,7 @@ export default function RootLayout({
 					<ThemeProvider attribute="class" defaultTheme="dark">
 						<Header />
 						<main className="pt-20">{children}</main>
+						<Toaster />
 					</ThemeProvider>
 				</QueryProvider>
 			</body>

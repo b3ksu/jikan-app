@@ -1,28 +1,28 @@
-export interface SeasonsNow {
-	pagination: SeasonsNowPagination;
-	data: SeasonsNowEntity[];
+export interface AnimeList {
+	pagination: AnimeListPagination;
+	data: AnimeListEntity[];
 }
 
-export interface SeasonsNowPagination {
+export interface AnimeListPagination {
 	last_visible_page: number;
 	has_next_page: boolean;
 	current_page: number;
-	items: SeasonsNowItems;
+	items: AnimeListEntities;
 }
 
-export interface SeasonsNowItems {
+export interface AnimeListEntities {
 	count: number;
 	total: number;
 	per_page: number;
 }
 
-export interface SeasonsNowEntity {
+export interface AnimeListEntity {
 	mal_id: number;
 	url: string;
-	images: SeasonsNowImages;
-	trailer: SeasonsNowTrailer;
+	images: AnimeListImages;
+	trailer: AnimeListTrailer;
 	approved: boolean;
-	titles: SeasonsNowTitle[];
+	titles: AnimeListTitle[];
 	title: string;
 	title_english?: string;
 	title_japanese: string;
@@ -32,7 +32,7 @@ export interface SeasonsNowEntity {
 	episodes?: number;
 	status: string;
 	airing: boolean;
-	aired: SeasonsNowAired;
+	aired: AnimeListAired;
 	duration: string;
 	rating: string;
 	score?: number;
@@ -45,41 +45,41 @@ export interface SeasonsNowEntity {
 	background?: string;
 	season?: string;
 	year?: number;
-	broadcast: SeasonsNowBroadcast;
-	producers: SeasonsNowProducer[];
-	licensors: SeasonsNowLicensor[];
-	studios: SeasonsNowStudio[];
-	genres: SeasonsNowGenre[];
+	broadcast: AnimeListBroadcast;
+	producers: AnimeListProducer[];
+	licensors: AnimeListLicensor[];
+	studios: AnimeListStudio[];
+	genres: AnimeListGenre[];
 	explicit_genres: any[];
-	themes: SeasonsNowTheme[];
-	demographics: SeasonsNowDemographic[];
+	themes: AnimeListTheme[];
+	demographics: AnimeListDemographic[];
 }
 
-export interface SeasonsNowImages {
-	jpg: SeasonsNowJpg;
-	webp: SeasonsNowWebp;
+export interface AnimeListImages {
+	jpg: AnimeListJpg;
+	webp: AnimeListWebp;
 }
 
-export interface SeasonsNowJpg {
+export interface AnimeListJpg {
 	image_url: string;
 	small_image_url: string;
 	large_image_url: string;
 }
 
-export interface SeasonsNowWebp {
+export interface AnimeListWebp {
 	image_url: string;
 	small_image_url: string;
 	large_image_url: string;
 }
 
-export interface SeasonsNowTrailer {
+export interface AnimeListTrailer {
 	youtube_id?: string;
 	url?: string;
 	embed_url?: string;
-	images: SeasonsNowImages2;
+	images: AnimeListImages2;
 }
 
-export interface SeasonsNowImages2 {
+export interface AnimeListImages2 {
 	image_url?: string;
 	small_image_url?: string;
 	medium_image_url?: string;
@@ -87,78 +87,78 @@ export interface SeasonsNowImages2 {
 	maximum_image_url?: string;
 }
 
-export interface SeasonsNowTitle {
+export interface AnimeListTitle {
 	type: string;
 	title: string;
 }
 
-export interface SeasonsNowAired {
+export interface AnimeListAired {
 	from: string;
 	to: any;
-	prop: SeasonsNowProp;
+	prop: AnimeListProp;
 	string: string;
 }
 
-export interface SeasonsNowProp {
-	from: SeasonsNowFrom;
-	to: SeasonsNowTo;
+export interface AnimeListProp {
+	from: AnimeListFrom;
+	to: AnimeListTo;
 }
 
-export interface SeasonsNowFrom {
+export interface AnimeListFrom {
 	day: number;
 	month: number;
 	year: number;
 }
 
-export interface SeasonsNowTo {
+export interface AnimeListTo {
 	day: any;
 	month: any;
 	year: any;
 }
 
-export interface SeasonsNowBroadcast {
+export interface AnimeListBroadcast {
 	day?: string;
 	time?: string;
 	timezone?: string;
 	string?: string;
 }
 
-export interface SeasonsNowProducer {
+export interface AnimeListProducer {
 	mal_id: number;
 	type: string;
 	name: string;
 	url: string;
 }
 
-export interface SeasonsNowLicensor {
+export interface AnimeListLicensor {
 	mal_id: number;
 	type: string;
 	name: string;
 	url: string;
 }
 
-export interface SeasonsNowStudio {
+export interface AnimeListStudio {
 	mal_id: number;
 	type: string;
 	name: string;
 	url: string;
 }
 
-export interface SeasonsNowGenre {
+export interface AnimeListGenre {
 	mal_id: number;
 	type: string;
 	name: string;
 	url: string;
 }
 
-export interface SeasonsNowTheme {
+export interface AnimeListTheme {
 	mal_id: number;
 	type: string;
 	name: string;
 	url: string;
 }
 
-export interface SeasonsNowDemographic {
+export interface AnimeListDemographic {
 	mal_id: number;
 	type: string;
 	name: string;
