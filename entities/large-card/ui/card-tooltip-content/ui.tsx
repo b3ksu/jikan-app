@@ -21,7 +21,7 @@ export const CardTooltipContent = (props: Props) => {
 			<p className="">
 				<span className="text-gray-400">Scores:</span> {props.score}{" "}
 				{!!props.scored_by && (
-					<span className="text-gray-400">/ {props.scored_by} Reviews</span>
+					<span className="text-gray-400">/ {props.scored_by} Votes</span>
 				)}
 			</p>
 			<div>

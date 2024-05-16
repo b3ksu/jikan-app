@@ -10,7 +10,7 @@ export const useGetSeasonsNow = (info: CurrentSeasonNav) => {
 		queryKey: ["seasonsNow", `${info.title}${info.currentPage}`],
 		queryFn: async () => {
 			const { data } = await axios.get<AnimeList>(
-				`${process.env.NEXT_PUBLIC_BASE_API}${info.url}&page=${info.currentPage}`,
+				`${process.env.NEXT_PUBLIC_BASE_API}${info.url}&page=${info.currentPage}&sfw=true`,
 			);
 
 			return data;
