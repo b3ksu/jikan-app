@@ -1,3 +1,5 @@
+import { CurrentSeasonNav } from "../types/anime-list-nav";
+
 export const CURRENT_SEASON_NAV: CurrentSeasonNav[] = [
 	{
 		title: "Ongoing",

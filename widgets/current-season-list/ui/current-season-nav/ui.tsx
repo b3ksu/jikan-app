@@ -1,9 +1,9 @@
 import { CURRENT_SEASON_NAV } from "@/shared/constant";
 import { AnimeListPagination } from "@/shared/types";
+import { CurrentSeasonNav } from "@/shared/types/anime-list-nav";
 import { Button } from "@/shared/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/tabs";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { CurrentSeasonNav } from "../../model/types";
 
 interface Props {
 	curr: CurrentSeasonNav;
