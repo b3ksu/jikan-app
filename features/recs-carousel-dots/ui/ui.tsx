@@ -4,7 +4,7 @@ type PropType = PropsWithChildren<
 	React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
 >;
 
-export const DotButton: React.FC<PropType> = (props) => {
+export const RecsCarouselDot: React.FC<PropType> = (props) => {
 	const { children, ...restProps } = props;
 
 	return (

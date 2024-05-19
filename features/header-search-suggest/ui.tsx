@@ -10,7 +10,7 @@ import {
 	CommandShortcut,
 } from "@/shared/ui/command";
 
-export const SearchSuggest = () => {
+export const HeaderSearchSuggest = () => {
 	return (
 		<Command className="border shadow-sm">
 			<CommandInput />

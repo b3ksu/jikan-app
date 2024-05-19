@@ -1,0 +1,1 @@
+export { HeaderSearchTrigger } from "./ui";

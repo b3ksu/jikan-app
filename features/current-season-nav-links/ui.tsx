@@ -1,8 +1,8 @@
-import { CURRENT_SEASON_NAV } from "@/shared/constant";
 import { AnimeListPagination } from "@/shared/types";
 import { CurrentSeasonNav } from "@/shared/types/anime-list-nav";
 import { Button } from "@/shared/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/tabs";
+import { CURRENT_SEASON_NAV } from "@/widgets/current-season-list/config";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Props {
@@ -13,7 +13,13 @@ interface Props {
 	pagination: AnimeListPagination | undefined;
 }
 
-export const SeasonLinks = ({ curr, handleChange, handleNext, handlePrev, pagination }: Props) => {
+export const CurrentSeasonNavLinks = ({
+	curr,
+	handleChange,
+	handleNext,
+	handlePrev,
+	pagination,
+}: Props) => {
 	return (
 		<Tabs defaultValue={CURRENT_SEASON_NAV[0].title} className="">
 			<div className="mb-3 flex items-center gap-2">

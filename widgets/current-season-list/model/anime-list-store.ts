@@ -1,6 +1,6 @@
-import { CURRENT_SEASON_NAV } from "@/shared/constant";
 import { CurrentSeasonNav } from "@/shared/types/anime-list-nav";
 import { makeAutoObservable } from "mobx";
+import { CURRENT_SEASON_NAV } from "../config";
 
 class AnimeListStore {
 	currentList: CurrentSeasonNav = CURRENT_SEASON_NAV[0];
@@ -24,4 +24,4 @@ class AnimeListStore {
 	};
 }
 
-export default new AnimeListStore();
+export const store = new AnimeListStore();

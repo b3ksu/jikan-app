@@ -1,6 +1,6 @@
 "use client";
 
-import { getSeasonsNow } from "@/shared/api/get-seasons-now";
+import { getSeasonsNow } from "@/shared/api";
 import { CurrentSeasonNav } from "@/shared/types/anime-list-nav";
 import { useQuery } from "@tanstack/react-query";
 

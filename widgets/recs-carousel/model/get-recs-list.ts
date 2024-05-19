@@ -1,6 +1,6 @@
 "use client";
 
-import { getRecs } from "@/shared/api/get-recs";
+import { getRecs } from "@/shared/api";
 import { useQuery } from "@tanstack/react-query";
 
 export const useGetRecsList = () => {
