@@ -1,5 +1,4 @@
-import { AnimeList } from "@/shared/types";
-import { CurrentSeasonNav } from "@/shared/types/anime-list-nav";
+import { AnimeList, CurrentSeasonNav } from "@/shared/types";
 import { ApiClient } from "../api-client";
 import { GetAnimeParams } from "../get-recs";
 
