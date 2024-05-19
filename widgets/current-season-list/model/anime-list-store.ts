@@ -23,4 +23,5 @@ class AnimeListStore {
 		this.currentList.currentPage += 1;
 	};
 }
+
 export default new AnimeListStore();

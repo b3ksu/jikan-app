@@ -13,7 +13,7 @@ interface Props extends AnimeListEntity {
 export const RecsCarouselItem = ({ ...el }: Props) => {
 	return (
 		<CarouselItem key={el.mal_id} className="h-[500px] cursor-pointer">
-			<div className="flex h-full justify-between">
+			<div className="flex h-full justify-between gap-2">
 				<div className="relative flex h-full w-2/5 flex-col justify-center gap-3">
 					<h3 className="text-3xl font-extrabold">{el.title}</h3>
 					<p className="line-clamp-3 text-base text-gray-500">{el.synopsis}</p>

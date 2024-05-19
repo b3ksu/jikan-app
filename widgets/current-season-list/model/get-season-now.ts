@@ -1,20 +1,12 @@
 "use client";
 
-import { AnimeList } from "@/shared/types";
+import { getSeasonsNow } from "@/shared/api/get-seasons-now";
 import { CurrentSeasonNav } from "@/shared/types/anime-list-nav";
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 
-export const useGetSeasonsNow = (info: CurrentSeasonNav) => {
+export const useGetSeasonsNow = (currentTab: CurrentSeasonNav) => {
 	return useQuery({
-		queryKey: ["seasonsNow", `${info.title}${info.currentPage}`],
-		queryFn: () => getSeasonsNow(info),
+		queryKey: ["seasonsNow", `${currentTab.title}${currentTab.currentPage}`],
+		queryFn: () => getSeasonsNow({ sfw: "true", limit: "12" }, currentTab),
 	});
-};
-
-const getSeasonsNow = async (info: CurrentSeasonNav) => {
-	const { data } = await axios.get<AnimeList>(
-		`${process.env.NEXT_PUBLIC_BASE_API}${info.url}&page=${info.currentPage}&sfw=true`,
-	);
-	return data;
 };
