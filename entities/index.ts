@@ -1,2 +1,2 @@
-export { LargeCard } from "./large-card";
+export { LargeCard } from "./card/ui/large-card";
 export { Logo } from "./logo";

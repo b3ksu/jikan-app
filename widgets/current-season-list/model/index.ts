@@ -1,2 +1,2 @@
-export * from "./anime-list-store";
-export * from "./get-season-now";
+export * from "../config/anime-list-store";
+export * from "./use-get-season-now";

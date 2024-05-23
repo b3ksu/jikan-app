@@ -1,31 +1,38 @@
 import { AnimeListPagination } from "@/shared/types";
-import { CurrentSeasonNav } from "@/shared/types/anime-list-nav";
 import { Button } from "@/shared/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/tabs";
-import { CURRENT_SEASON_NAV } from "@/widgets/current-season-list/config";
+import { CurrentSeasonConfig } from "@/widgets/current-season-list/config";
+import { ICurrentSeasonControlsNav } from "@/widgets/current-season-list/model/current-season.interface";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Props {
-	curr: CurrentSeasonNav;
-	handleChange: (nav: CurrentSeasonNav) => void;
+	curr: ICurrentSeasonControlsNav;
+	handleChange: (nav: ICurrentSeasonControlsNav) => void;
 	handleNext: () => void;
 	handlePrev: () => void;
 	pagination: AnimeListPagination | undefined;
+	isLoading: boolean;
 }
 
-export const CurrentSeasonNavLinks = ({
+export const CurrentSeasonControls = ({
 	curr,
 	handleChange,
 	handleNext,
 	handlePrev,
 	pagination,
+	isLoading,
 }: Props) => {
 	return (
-		<Tabs defaultValue={CURRENT_SEASON_NAV[0].title} className="">
+		<Tabs defaultValue={CurrentSeasonConfig.CONTROLS[0].title} className="">
 			<div className="mb-3 flex items-center gap-2">
 				<TabsList>
-					{CURRENT_SEASON_NAV.map((el) => (
-						<TabsTrigger value={el.title} key={el.id} onClick={() => handleChange(el)}>
+					{CurrentSeasonConfig.CONTROLS.map((el) => (
+						<TabsTrigger
+							disabled={isLoading}
+							value={el.title}
+							key={el.id}
+							onClick={() => handleChange(el)}
+						>
 							{el.title}
 						</TabsTrigger>
 					))}
@@ -33,14 +40,14 @@ export const CurrentSeasonNavLinks = ({
 				<Button
 					onClick={handlePrev}
 					size="icon"
-					disabled={pagination?.current_page === 1 ? true : false}
+					disabled={isLoading || pagination?.current_page === 1 ? true : false}
 				>
 					<ChevronLeft size={28} />
 				</Button>
 				<Button
 					size="icon"
 					onClick={handleNext}
-					disabled={pagination?.has_next_page ? false : true}
+					disabled={isLoading || !pagination?.has_next_page ? true : false}
 				>
 					<ChevronRight size={28} />
 				</Button>

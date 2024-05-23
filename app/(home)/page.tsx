@@ -1,4 +1,5 @@
-import { CurrentSeasonList, RecsCarousel } from "@/widgets";
+import { CurrentSeasonList, MostFavAside, RecsCarousel } from "@/widgets";
+import { Seasons } from "@/widgets/seasons/ui/ui";
 
 export default function Home() {
 	return (
@@ -6,8 +7,10 @@ export default function Home() {
 			<RecsCarousel />
 			<div className="grid grid-cols-12 gap-3">
 				<CurrentSeasonList />
-				<div className="col-span-3 rounded bg-slate-600">Aside</div>
+				<MostFavAside />
 			</div>
+
+			<Seasons />
 		</main>
 	);
 }

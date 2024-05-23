@@ -1,3 +1,4 @@
+import { RootConfig } from "@/shared/config";
 import axios from "axios";
 
 export const ApiClient = axios.create({
@@ -5,5 +6,5 @@ export const ApiClient = axios.create({
 	headers: {
 		"Content-Type": "application/json",
 	},
-	timeout: 10000,
+	timeout: RootConfig.TIMEOUT,
 });

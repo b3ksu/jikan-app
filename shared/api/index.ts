@@ -1,3 +1,3 @@
 export * from "./api-client";
-export * from "./get-recs";
-export * from "./get-seasons-now";
+export * from "../../widgets/recs-carousel/api/recs.service";
+export * from "../../widgets/current-season-list/api/current-season.service";

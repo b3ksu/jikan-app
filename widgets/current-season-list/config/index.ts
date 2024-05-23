@@ -1,4 +1,4 @@
-export const CURRENT_SEASON_NAV = [
+export const CONTROLS = [
 	{
 		title: "Ongoing",
 		url: "/seasons/now",
@@ -12,3 +12,9 @@ export const CURRENT_SEASON_NAV = [
 		currentPage: 1,
 	},
 ];
+
+export const STALE_TIME = Infinity;
+export const LIMIT = "12";
+export const TITLE = "Recently Updated";
+
+export * as CurrentSeasonConfig from "./";

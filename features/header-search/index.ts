@@ -1,2 +1,2 @@
-export { HeaderSearch } from "./ui/search";
+export { HeaderSearch } from "./ui/ui";
 export { useOpenSearch } from "./model/model";

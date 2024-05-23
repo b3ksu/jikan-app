@@ -1,18 +1,17 @@
 "use client";
 
-import { useDotButton } from "@/features/recs-carousel-dots/model/dot-button";
-import { cn } from "@/shared/lib/utils";
+import { useDotButtonControls } from "@/features";
+import { cn } from "@/shared/lib/cn";
 import { Carousel, CarouselApi, CarouselContent } from "@/shared/ui/carousel";
 import { useState } from "react";
-import { RecsCarouselModel } from "..";
 import { RecsCarouselItem } from "../../../entities/recs-carousel-item/ui";
 import { RecsCarouselDot } from "../../../features/recs-carousel-dots/ui/ui";
+import { useGetRecs } from "../model/use-get-recs";
 
 export const RecsCarousel = () => {
-	const { useGetRecsList } = RecsCarouselModel;
-	const { data, isLoading } = useGetRecsList();
+	const { data, isLoading } = useGetRecs();
 	const [api, setApi] = useState<CarouselApi>();
-	const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(api);
+	const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButtonControls(api);
 
 	if (isLoading) return <div>loading</div>;
 

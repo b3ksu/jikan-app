@@ -1,2 +1,2 @@
 export { RecsCarousel } from "./ui/ui";
-export * as RecsCarouselModel from "./model";
+export * from "./model/use-get-recs";

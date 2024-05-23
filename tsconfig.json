@@ -1,22 +1,25 @@
 {
 	"compilerOptions": {
-		"lib": ["dom", "dom.iterable", "esnext"],
-		"allowJs": true,
-		"skipLibCheck": true,
-		"strict": true,
-		"noEmit": true,
-		"esModuleInterop": true,
-		"module": "esnext",
-		"moduleResolution": "bundler",
-		"resolveJsonModule": true,
-		"isolatedModules": true,
-		"jsx": "preserve",
-		"incremental": true,
 		"plugins": [
+			{
+				"name": "typescript-plugin-css-modules"
+			},
 			{
 				"name": "next"
 			}
 		],
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"strict": false,
+		"noEmit": true,
+		"incremental": true,
+		"esModuleInterop": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"jsx": "preserve",
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./*"]
@@ -26,10 +29,15 @@
 		"next-env.d.ts",
 		"**/*.ts",
 		"**/*.tsx",
+		"*.d.ts",
 		".next/types/**/*.ts",
-		"jest.config.ts",
-		"__tests__/app/home.test.tsx",
 		"jest.config.ts"
+		// "app",
+		// "entities",
+		// "features",
+		// "shared",
+		// "widgets",
+		// "config"
 	],
 	"exclude": ["node_modules"]
 }

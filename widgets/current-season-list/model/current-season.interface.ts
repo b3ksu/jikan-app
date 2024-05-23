@@ -1,4 +1,4 @@
-export type CurrentSeasonNav = {
+export type ICurrentSeasonControlsNav = {
 	title: string;
 	url: string;
 	id: number;

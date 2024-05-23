@@ -1,4 +1,5 @@
-export { HeaderSearchSuggest } from "./header-search-suggest";
+export { HeaderSearchSuggest } from "./header-search/ui/header-search-suggest";
 export { HeaderSearch } from "./header-search";
-export { HeaderSearchTrigger } from "./header-search-trigger";
-export { CurrentSeasonNavLinks } from "./current-season-nav-links";
+export { HeaderSearchTrigger } from "./header-search/ui/header-search-trigger";
+export { CurrentSeasonControls } from "./current-season-controls";
+export { useDotButtonControls } from "./recs-carousel-dots/model/use-dot-button-controls";

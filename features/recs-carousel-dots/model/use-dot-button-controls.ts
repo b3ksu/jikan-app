@@ -1,3 +1,5 @@
+"use client";
+
 import { useCallback, useEffect, useState } from "react";
 
 type UseDotButtonType = {
@@ -6,7 +8,7 @@ type UseDotButtonType = {
 	onDotButtonClick: (index: number) => void;
 };
 
-export const useDotButton = (emblaApi: any): UseDotButtonType => {
+export const useDotButtonControls = (emblaApi: any): UseDotButtonType => {
 	const [selectedIndex, setSelectedIndex] = useState(0);
 	const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 

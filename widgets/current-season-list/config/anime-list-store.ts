@@ -1,15 +1,15 @@
-import { CurrentSeasonNav } from "@/shared/types/anime-list-nav";
+import { ICurrentSeasonControlsNav } from "@/widgets/current-season-list/model/current-season.interface";
 import { makeAutoObservable } from "mobx";
-import { CURRENT_SEASON_NAV } from "../config";
+import { CurrentSeasonConfig } from ".";
 
 class AnimeListStore {
-	currentList: CurrentSeasonNav = CURRENT_SEASON_NAV[0];
+	currentList: ICurrentSeasonControlsNav = CurrentSeasonConfig.CONTROLS[0];
 
 	constructor() {
 		makeAutoObservable(this);
 	}
 
-	setCurrentList = (tab: CurrentSeasonNav) => {
+	setCurrentList = (tab: ICurrentSeasonControlsNav) => {
 		if (this.currentList.title !== tab.title) {
 			this.currentList = tab;
 		}
