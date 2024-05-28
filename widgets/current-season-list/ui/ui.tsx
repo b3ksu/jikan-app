@@ -16,7 +16,7 @@ export const CurrentSeasonList = observer(() => {
 	return (
 		<div className="col-span-12 2xl:col-span-9">
 			<div className="flex justify-between">
-				<h2 className="mb-2 text-xl font-bold">{CurrentSeasonConfig.TITLE}</h2>
+				<h2 className="title">{CurrentSeasonConfig.TITLE}</h2>
 				<CurrentSeasonControls
 					curr={currentList}
 					handleChange={setCurrentList}
@@ -26,6 +26,7 @@ export const CurrentSeasonList = observer(() => {
 					isLoading={isFetching}
 				/>
 			</div>
+
 			<div className="grid grid-cols-1 gap-x-3 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 2xl:grid-cols-6">
 				{!isLoading ? (
 					data?.data.map((el) => {

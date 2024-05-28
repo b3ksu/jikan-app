@@ -5,6 +5,7 @@ import { SmallCard } from "./small-card";
 type Props = AnimeListEntity & {
 	isLoading: boolean;
 	cardType: "large-card" | "small-card";
+	index: number;
 };
 
 export const Card = ({ cardType, ...rest }: Props) => {
@@ -12,7 +13,7 @@ export const Card = ({ cardType, ...rest }: Props) => {
 		case "large-card":
 			return <LargeCard {...rest} />;
 		case "small-card":
-			return <SmallCard />;
+			return <SmallCard shouldCount {...rest} />;
 		default:
 			return null;
 	}

@@ -68,9 +68,11 @@
 	.pantone {
 		--background: 0 0% 100%;
 	}
-}
 
-@layer base {
+	.title {
+		@apply mb-2 text-xl font-bold;
+	}
+
 	* {
 		@apply scroll-smooth border-border;
 	}

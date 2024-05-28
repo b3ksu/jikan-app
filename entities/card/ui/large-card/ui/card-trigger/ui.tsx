@@ -28,18 +28,18 @@ export const CardTrigger = (props: Props) => {
 				<div className="flex items-center justify-between bg-gray-800 p-0.5">
 					<div className="flex gap-0.5">
 						{props.episodes ? (
-							<Badge variant="default" className="bg-purple-500 ">
+							<Badge variant="default" className="rounded-sm bg-purple-500">
 								<Tv size={16} className="mr-1" /> {props.episodes}
 							</Badge>
 						) : null}
 						{props.score ? (
-							<Badge variant="default" className="bg-yellow-600">
+							<Badge variant="default" className="rounded-sm bg-yellow-600">
 								<Star size={16} className="mr-1" />
 								{props.score}
 							</Badge>
 						) : null}
 					</div>
-					<Badge variant={"outline"}>{props.type || "Unknown"}</Badge>
+					<Badge variant={"outline"}>{props.type ?? "Unknown"}</Badge>
 				</div>
 			</div>
 		</TooltipTrigger>
