@@ -2,7 +2,7 @@ import { ICurrentSeasonControlsNav } from "@/widgets/current-season-list/model/c
 import { makeAutoObservable } from "mobx";
 import { CurrentSeasonConfig } from ".";
 
-class AnimeListStore {
+class CurrentSeasonStore {
 	currentList: ICurrentSeasonControlsNav = CurrentSeasonConfig.CONTROLS[0];
 
 	constructor() {
@@ -24,4 +24,4 @@ class AnimeListStore {
 	};
 }
 
-export const store = new AnimeListStore();
+export default new CurrentSeasonStore();

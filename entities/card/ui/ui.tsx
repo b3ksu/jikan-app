@@ -5,7 +5,7 @@ import { SmallCard } from "./small-card";
 type Props = AnimeListEntity & {
 	isLoading: boolean;
 	cardType: "large-card" | "small-card";
-	index: number;
+	index?: number;
 };
 
 export const Card = ({ cardType, ...rest }: Props) => {

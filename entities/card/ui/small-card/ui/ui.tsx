@@ -4,7 +4,7 @@ import { SmallCardContent } from "./small-card-content/ui";
 
 type Props = AnimeListEntity & {
 	isLoading: boolean;
-	index: number;
+	index?: number;
 	shouldCount?: boolean;
 };
 

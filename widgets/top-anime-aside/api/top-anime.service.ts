@@ -3,8 +3,8 @@ import { AnimeList } from "@/shared/types";
 import { SLUG } from "@/widgets/recs-carousel/config";
 import { IRecsParams } from "@/widgets/recs-carousel/model/recs.interface";
 
-export const MostFavService = {
-	async getMostFav(props: IRecsParams) {
+export const TopAnimeService = {
+	async getTopAnime(props: IRecsParams) {
 		try {
 			const params = new URLSearchParams({ ...props });
 			const { data } = await ApiClient.get<AnimeList>(SLUG, { params });

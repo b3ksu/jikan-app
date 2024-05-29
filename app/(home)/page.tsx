@@ -1,4 +1,4 @@
-import { CurrentSeasonList, MostFavAside, RecsCarousel } from "@/widgets";
+import { CurrentSeasonList, RecsCarousel, TopAnimeAside } from "@/widgets";
 import { Seasons } from "@/widgets/seasons/ui/ui";
 
 export default function Home() {
@@ -7,7 +7,7 @@ export default function Home() {
 			<RecsCarousel />
 			<div className="grid grid-cols-12 gap-3">
 				<CurrentSeasonList />
-				<MostFavAside />
+				<TopAnimeAside />
 			</div>
 
 			<Seasons />

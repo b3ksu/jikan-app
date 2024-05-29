@@ -3,14 +3,12 @@
 import { Card } from "@/entities/card";
 import { CurrentSeasonControls } from "@/features";
 import { observer } from "mobx-react-lite";
-import { CurrentSeasonModel } from "..";
 import { CurrentSeasonConfig } from "../config";
+import currentSeasonStore from "../config/current-season-store";
+import { useGetSeasonsNow } from "../model";
 
 export const CurrentSeasonList = observer(() => {
-	const {
-		store: { currentList, setCurrentList, setNextPage, setPrevPage },
-		useGetSeasonsNow,
-	} = CurrentSeasonModel;
+	const { currentList, setCurrentList, setNextPage, setPrevPage } = currentSeasonStore;
 	const { data, isLoading, isError, isFetching } = useGetSeasonsNow({ ...currentList });
 
 	return (
