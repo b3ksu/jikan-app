@@ -40,14 +40,14 @@ export const CurrentSeasonControls = ({
 				<Button
 					onClick={handlePrev}
 					size="icon"
-					disabled={isLoading ?? pagination?.current_page === 1 ? true : false}
+					disabled={isLoading || pagination?.current_page === 1 ? true : false}
 				>
 					<ChevronLeft size={28} />
 				</Button>
 				<Button
 					size="icon"
 					onClick={handleNext}
-					disabled={isLoading ?? !pagination?.has_next_page ? true : false}
+					disabled={isLoading || !pagination?.has_next_page ? true : false}
 				>
 					<ChevronRight size={28} />
 				</Button>

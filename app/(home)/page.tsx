@@ -8,9 +8,8 @@ export default function Home() {
 			<div className="grid grid-cols-12 gap-3">
 				<CurrentSeasonList />
 				<TopAnimeAside />
+				<Seasons />
 			</div>
-
-			<Seasons />
 		</main>
 	);
 }

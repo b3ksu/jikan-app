@@ -1,32 +1,43 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
 import { SeasonsService } from "../api/seasons.service";
 import { SeasonsConfig } from "../config";
+import { ISeasonsPaths, SeasonsData } from "./seasons.interface";
 
 export const useGetSeasons = () => {
 	const { data: seasons, isFetching: seasonsLoading } = useQuery({
 		queryKey: ["seasons"],
 		queryFn: SeasonsService.getALlSeasons,
 	});
+	const [curr, setCurr] = useState<ISeasonsPaths | null>(null);
 
-	const isLoaded = seasons?.data;
-	const basePath = seasons
-		? {
+	useEffect(() => {
+		if (seasons) {
+			setCurr({
 				season: seasons.data.at(-1).seasons.at(-1),
 				year: seasons.data.at(-1).year.toString(),
-			}
-		: null;
+			});
+		}
+	}, [seasons]);
 
-	const { data: animeList, isFetching: animeListLoading } = useQuery({
-		queryKey: ["currentSeasonList"],
+	const isLoaded = seasons?.data;
+
+	const { data: animeList, isPlaceholderData: animeListLoading } = useQuery({
+		queryKey: ["currentSeasonList", curr],
 		queryFn: () =>
 			SeasonsService.getCurrentSeasonList(
 				{ unapproved: "false", limit: SeasonsConfig.LIMIT, sfw: "true" },
-				basePath,
+				curr,
 			),
 		enabled: !!isLoaded,
+		placeholderData: (prev) => prev,
 	});
 
-	return { seasons, animeList, animeListLoading, seasonsLoading };
+	const handleClick = (path: ISeasonsPaths) => {
+		setCurr(path);
+	};
+
+	return { seasons, animeList, animeListLoading, seasonsLoading, handleClick };
 };
