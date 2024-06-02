@@ -6,14 +6,16 @@ type Props = AnimeListEntity & {
 	isLoading: boolean;
 	cardType: "large-card" | "small-card";
 	index?: number;
+	shouldCount?: boolean;
+	isFullCardInfo?: boolean;
 };
 
-export const Card = ({ cardType, ...rest }: Props) => {
+export const Card = ({ cardType, shouldCount = false, isFullCardInfo = false, ...rest }: Props) => {
 	switch (cardType) {
 		case "large-card":
 			return <LargeCard {...rest} />;
 		case "small-card":
-			return <SmallCard shouldCount {...rest} />;
+			return <SmallCard shouldCount={shouldCount} isFull={isFullCardInfo} {...rest} />;
 		default:
 			return null;
 	}

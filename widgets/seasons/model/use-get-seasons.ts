@@ -16,8 +16,8 @@ export const useGetSeasons = () => {
 	useEffect(() => {
 		if (seasons) {
 			setCurr({
-				season: seasons.data.at(-1).seasons.at(-1),
-				year: seasons.data.at(-1).year.toString(),
+				season: seasons.data.at(0).seasons.at(0),
+				year: seasons.data.at(0).year.toString(),
 			});
 		}
 	}, [seasons]);

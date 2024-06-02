@@ -1,18 +1,21 @@
 import { cn } from "@/shared/lib/cn";
 import { AnimeListEntity } from "@/shared/types";
+import { Badge } from "@/shared/ui/badge";
 import { SmallCardContent } from "./small-card-content/ui";
 
 type Props = AnimeListEntity & {
 	isLoading: boolean;
 	index?: number;
 	shouldCount?: boolean;
+	isFull?: boolean;
 };
 
-export const SmallCard = ({ index, isLoading, shouldCount, ...props }: Props) => {
+export const SmallCard = ({ index, isLoading, shouldCount, isFull, ...props }: Props) => {
 	const outlineClassName = {
 		"outline-purple-600": index === 1 && shouldCount,
 		"outline-orange-600": index === 2 && shouldCount,
 		"outline-yellow-600": index === 3 && shouldCount,
+		"justify-start": shouldCount,
 	};
 
 	const countClassName = {
@@ -24,7 +27,7 @@ export const SmallCard = ({ index, isLoading, shouldCount, ...props }: Props) =>
 	return (
 		<div
 			className={cn(
-				"flex cursor-pointer items-center gap-2 rounded bg-gray-800 p-1 outline outline-1 outline-transparent",
+				"flex w-full cursor-pointer items-center justify-between gap-2 rounded bg-gray-800 p-1 px-2 outline outline-1 outline-transparent hover:bg-gray-700/50",
 				outlineClassName,
 			)}
 		>
@@ -35,6 +38,16 @@ export const SmallCard = ({ index, isLoading, shouldCount, ...props }: Props) =>
 			)}
 
 			<SmallCardContent {...props} />
+
+			{isFull && (
+				<div className="flex gap-2">
+					{props.genres.map((el) => (
+						<Badge key={el.mal_id} className="bg-gray-500">
+							{el.name}
+						</Badge>
+					))}
+				</div>
+			)}
 		</div>
 	);
 };

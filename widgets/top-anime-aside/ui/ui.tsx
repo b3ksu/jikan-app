@@ -36,6 +36,7 @@ export const TopAnimeAside = () => {
 							index={i + 1}
 							cardType="small-card"
 							key={el.mal_id}
+							shouldCount
 							{...el}
 						></Card>
 					))

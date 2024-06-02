@@ -1,6 +1,8 @@
 "use client";
 
+import { Card } from "@/entities/card";
 import { cn } from "@/shared/lib/cn";
+import { AnimeList } from "@/shared/types";
 import {
 	Carousel,
 	CarouselContent,
@@ -9,19 +11,19 @@ import {
 	CarouselPrevious,
 } from "@/shared/ui/carousel";
 import Image from "next/image";
-import { ISeasonsPaths, SeasonsData, SeasonsRoot } from "../model/seasons.interface";
 import { useGetSeasons } from "../model/use-get-seasons";
+import { SeasonsBodyItem } from "./seasons-body-item/ui";
 
 export const Seasons = () => {
 	const { seasons, seasonsLoading, animeList, handleClick, animeListLoading } = useGetSeasons();
 
 	return (
 		<div
-			className={cn("col-span-9 rounded bg-gray-800 p-2", {
+			className={cn("col-span-9 mb-4 rounded bg-gray-800 p-2", {
 				"opacity-30": animeListLoading,
 			})}
 		>
-			<div className="relative overflow-hidden rounded bg-cover bg-no-repeat p-2 backdrop-blur">
+			<div className="relative mb-4 overflow-hidden rounded bg-cover bg-no-repeat p-2 backdrop-blur">
 				<Image
 					src="/seasons.jpg"
 					alt="seasons"
@@ -32,9 +34,9 @@ export const Seasons = () => {
 				<h2 className="title mb-4">Top anime by seasons</h2>
 				<Carousel opts={{ align: "start", dragFree: true, watchDrag: true }}>
 					<CarouselContent>
-						{seasons?.data?.map((el) => (
-							<CarouselItem className="basis-1/6" key={el.year}>
-								<SeasonsBodyItem {...el} handle={handleClick} />
+						{seasons?.data?.map((season) => (
+							<CarouselItem className="basis-1/6" key={season.year}>
+								<SeasonsBodyItem {...season} handle={handleClick} />
 							</CarouselItem>
 						))}
 					</CarouselContent>
@@ -42,34 +44,28 @@ export const Seasons = () => {
 					<CarouselNext />
 				</Carousel>
 			</div>
-			<hr />
-			<hr />
-			<hr />
-			<hr />
-			<div>Current Season list{JSON.stringify(animeList)}</div>
+
+			<SeasonsHeadItem {...animeList} isLoading={animeListLoading} />
 		</div>
 	);
 };
 
-type Props = {
-	handle: (path: ISeasonsPaths) => void;
-} & SeasonsData;
+type Props = AnimeList & {
+	isLoading: boolean;
+};
 
-export const SeasonsBodyItem = (p: Props) => {
+export const SeasonsHeadItem = (p: Props) => {
 	return (
-		<div className="text-left text-3xl font-black text-gray-400 transition-all">
-			<div>{p.year}</div>
-			<div className="text-left text-xl">
-				{p.seasons.map((el) => (
-					<div
-						onClick={() => p.handle({ season: el, year: String(p.year) })}
-						className="cursor-pointer hover:text-gray-100"
-						key={el}
-					>
-						{el}
-					</div>
-				))}
-			</div>
+		<div className="grid grid-cols-1 px-12">
+			{p?.data?.map((elem) => (
+				<Card
+					key={elem.mal_id}
+					{...elem}
+					cardType="small-card"
+					isLoading={p.isLoading}
+					isFullCardInfo
+				/>
+			))}
 		</div>
 	);
 };
