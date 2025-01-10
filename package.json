@@ -1,7 +1,8 @@
 {
 	"name": "jikan-app",
 	"version": "0.1.0",
-	"private": true,
+	"private": false,
+	"author": "b3ksu <zxc.beksultan@gmail.com>",
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
@@ -67,5 +68,12 @@
 		"ts-jest": "^29.1.2",
 		"ts-node": "^10.9.2",
 		"typescript": "^5"
-	}
+	},
+	"license": "MIT",
+	"keywords": [
+		"test",
+		"testy",
+		"testus",
+		"testion"
+	]
 }

@@ -27,7 +27,7 @@ export const CurrentSeasonList = observer(() => {
 
 			<div className="grid grid-cols-1 gap-x-3 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 2xl:grid-cols-6">
 				{!isLoading ? (
-					data?.data.map((el) => {
+					data?.data?.map((el) => {
 						const id = crypto.randomUUID();
 						return (
 							<Card key={id} isLoading={isLoading} cardType="large-card" {...el} />

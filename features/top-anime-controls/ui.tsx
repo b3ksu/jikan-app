@@ -1,14 +1,16 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/shared/ui/tabs";
 import { TopAnimeConfig, TopAnimeControls } from "@/widgets/top-anime-aside/config";
 
+
 export const TopAnimeControlsNav = ({
-	isLoading,
-	tab,
-	handleTabChange,
-}: {
+										isLoading,
+										tab,
+										handleTabChange,
+									}: {
 	isLoading: boolean;
 	tab: TopAnimeControls;
 	handleTabChange: (tab: TopAnimeControls) => void;
+
 }) => {
 	return (
 		<Tabs defaultValue={tab.title}>

@@ -18,7 +18,7 @@ export const RecsCarousel = () => {
 	return (
 		<Carousel setApi={setApi} opts={{ loop: true }} className="relative mb-6">
 			<CarouselContent className="h-full">
-				{data?.data.map((el) => (
+				{data?.data?.map((el) => (
 					<RecsCarouselItem
 						key={el.mal_id}
 						{...el}

@@ -30,7 +30,7 @@ export const TopAnimeAside = () => {
 				{isLoading ? (
 					<div>Loading</div>
 				) : (
-					data?.data.map((el, i) => (
+					data?.data?.map((el, i) => (
 						<Card
 							isLoading={isLoading}
 							index={i + 1}
