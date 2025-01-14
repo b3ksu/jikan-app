@@ -1,6 +1,6 @@
 {
-	"name": "jikan-app",
-	"version": "0.1.0",
+	"name": "@b3ksu/jikan-app",
+	"version": "0.1.1",
 	"private": false,
 	"author": "b3ksu <zxc.beksultan@gmail.com>",
 	"scripts": {
